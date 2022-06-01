@@ -51,8 +51,8 @@ namespace k_r
         private void button4_Click(object sender, EventArgs e)
         {
             this.Close();
-            MedForms f2 = new MedForms();
-            f2.Show();
+            ManagerForm manager = new ManagerForm();
+           manager.Show();
             this.Hide();
         }
     }

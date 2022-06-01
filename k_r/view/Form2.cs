@@ -60,9 +60,8 @@ namespace k_r
         private void button4_Click(object sender, EventArgs e)
         {
             this.Close();
-            AutotizationsForms f1 = new AutotizationsForms();
-
-            f1.Show();
+            ManagerForm manager = new ManagerForm();
+            manager.Show();
             this.Hide();
         }
 

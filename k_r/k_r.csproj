@@ -76,6 +76,18 @@
     <Compile Include="view\AdminUC1.Designer.cs">
       <DependentUpon>AdminUC1.cs</DependentUpon>
     </Compile>
+    <Compile Include="view\CoursesForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="view\CoursesForm.Designer.cs">
+      <DependentUpon>CoursesForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="view\CoursesUCcs.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="view\CoursesUCcs.Designer.cs">
+      <DependentUpon>CoursesUCcs.cs</DependentUpon>
+    </Compile>
     <Compile Include="view\Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -135,6 +147,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="view\AdminUC1.resx">
       <DependentUpon>AdminUC1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="view\CoursesForm.resx">
+      <DependentUpon>CoursesForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="view\CoursesUCcs.resx">
+      <DependentUpon>CoursesUCcs.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="view\Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>

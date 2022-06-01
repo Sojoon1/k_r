@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace k_r
 {
-    public partial class admin : Form
+    public partial class adminForms : Form
     {
-        public admin()
+        public adminForms()
         {
             InitializeComponent();
         }

@@ -35,6 +35,14 @@ namespace k_r
         }
         private void button1_Click(object sender, EventArgs e)
         {
+            //if (string.IsNullOrWhiteSpace(label5.Text))
+            //    label5.Text = "Введите значение";
+            //else
+            //    label5.Text = "";
+            //if (string.IsNullOrWhiteSpace(label6.Text))
+            //    label6.Text = "Введите значение";
+            //else
+            //    label6.Text = "";
             if (textBoxLogin.Text == "" || textBoxPassword.Text == "")
             {
                 MessageBox.Show("Введите логин и пароль!");
@@ -53,13 +61,13 @@ namespace k_r
                 }
                 else if (UFN.User.ID_Роль == 2)
                 {
-                    MedForms f2 = new MedForms();
-                    f2.Show();
+                    ManagerForm managerForm = new ManagerForm();
+                    managerForm.Show();
                     this.Hide();
                 }
                 else if (UFN.User.ID_Роль == 3)
                 {
-                    admin adm = new admin();
+                    adminForms adm = new adminForms();
                     adm.Show();
                     this.Hide();
 
@@ -67,12 +75,8 @@ namespace k_r
             }
             
         }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
-        }
-
+        //Application.Exit();
+        
         private void Form1_Load(object sender, EventArgs e)
         {
 
