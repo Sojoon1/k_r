@@ -56,11 +56,31 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DatabaseContext.cs" />
+    <Compile Include="EF\Groups.cs" />
+    <Compile Include="EF\Listener.cs" />
+    <Compile Include="EF\Model1.cs" />
+    <Compile Include="EF\Role.cs" />
+    <Compile Include="EF\Schedule.cs" />
+    <Compile Include="EF\sysdiagrams.cs" />
+    <Compile Include="EF\Users.cs" />
+    <Compile Include="EF\Сourses.cs" />
     <Compile Include="GroupUC1.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="GroupUC1.Designer.cs">
       <DependentUpon>GroupUC1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="view\addCoursForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="view\addCoursForm.Designer.cs">
+      <DependentUpon>addCoursForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="view\addGroupForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="view\addGroupForm.Designer.cs">
+      <DependentUpon>addGroupForm.cs</DependentUpon>
     </Compile>
     <Compile Include="view\admin.cs">
       <SubType>Form</SubType>
@@ -68,13 +88,17 @@
     <Compile Include="view\admin.Designer.cs">
       <DependentUpon>admin.cs</DependentUpon>
     </Compile>
-    <Compile Include="Autotization.cs" />
-    <Compile Include="Cours.cs" />
     <Compile Include="view\AdminUC1.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="view\AdminUC1.Designer.cs">
       <DependentUpon>AdminUC1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="view\AuForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="view\AuForm.Designer.cs">
+      <DependentUpon>AuForm.cs</DependentUpon>
     </Compile>
     <Compile Include="view\CoursesForm.cs">
       <SubType>Form</SubType>
@@ -87,6 +111,18 @@
     </Compile>
     <Compile Include="view\CoursesUCcs.Designer.cs">
       <DependentUpon>CoursesUCcs.cs</DependentUpon>
+    </Compile>
+    <Compile Include="view\CoursForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="view\CoursForm.Designer.cs">
+      <DependentUpon>CoursForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="view\EddDelF.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="view\EddDelF.Designer.cs">
+      <DependentUpon>EddDelF.cs</DependentUpon>
     </Compile>
     <Compile Include="view\Form1.cs">
       <SubType>Form</SubType>
@@ -118,29 +154,52 @@
     <Compile Include="view\Form5.Designer.cs">
       <DependentUpon>Form5.cs</DependentUpon>
     </Compile>
-    <Compile Include="Group.cs" />
     <Compile Include="view\GroupForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="view\GroupForm.Designer.cs">
       <DependentUpon>GroupForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Listener.cs" />
     <Compile Include="view\ManagerForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="view\ManagerForm.Designer.cs">
       <DependentUpon>ManagerForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Model1.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Role.cs" />
-    <Compile Include="Schedule.cs" />
-    <Compile Include="sysdiagram.cs" />
-    <Compile Include="User.cs" />
+    <Compile Include="view\MyCoursForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="view\MyCoursForm.Designer.cs">
+      <DependentUpon>MyCoursForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="view\RasUC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="view\RasUC.Designer.cs">
+      <DependentUpon>RasUC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="view\UserForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="view\UserForm.Designer.cs">
+      <DependentUpon>UserForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="view\UserUC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="view\UserUC.Designer.cs">
+      <DependentUpon>UserUC.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="GroupUC1.resx">
       <DependentUpon>GroupUC1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="view\addCoursForm.resx">
+      <DependentUpon>addCoursForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="view\addGroupForm.resx">
+      <DependentUpon>addGroupForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="view\admin.resx">
       <DependentUpon>admin.cs</DependentUpon>
@@ -148,11 +207,20 @@
     <EmbeddedResource Include="view\AdminUC1.resx">
       <DependentUpon>AdminUC1.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="view\AuForm.resx">
+      <DependentUpon>AuForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="view\CoursesForm.resx">
       <DependentUpon>CoursesForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="view\CoursesUCcs.resx">
       <DependentUpon>CoursesUCcs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="view\CoursForm.resx">
+      <DependentUpon>CoursForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="view\EddDelF.resx">
+      <DependentUpon>EddDelF.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="view\Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
@@ -184,24 +252,50 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="view\MyCoursForm.resx">
+      <DependentUpon>MyCoursForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="view\RasUC.resx">
+      <DependentUpon>RasUC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="view\UserForm.resx">
+      <DependentUpon>UserForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="view\UserUC.resx">
+      <DependentUpon>UserUC.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="packages.config" />
-    <None Include="Properties\DataSources\Autotization.datasource" />
-    <None Include="Properties\DataSources\Cours.datasource" />
-    <None Include="Properties\DataSources\Form1.datasource" />
-    <None Include="Properties\DataSources\Form2.datasource" />
-    <None Include="Properties\DataSources\Form3.datasource" />
-    <None Include="Properties\DataSources\Form4.datasource" />
-    <None Include="Properties\DataSources\Form5.datasource" />
-    <None Include="Properties\DataSources\Group.datasource" />
+    <None Include="Properties\DataSources\AddForm.datasource" />
+    <None Include="Properties\DataSources\adminForms.datasource" />
+    <None Include="Properties\DataSources\AutotizationsForms.datasource" />
+    <None Include="Properties\DataSources\DatabaseContext.datasource" />
+    <None Include="Properties\DataSources\GroupForm.datasource" />
+    <None Include="Properties\DataSources\GroupUC1.datasource" />
+    <None Include="Properties\DataSources\k_r.EF.Listener.datasource" />
+    <None Include="Properties\DataSources\k_r.EF.Model1.datasource" />
+    <None Include="Properties\DataSources\k_r.EF.Role.datasource" />
+    <None Include="Properties\DataSources\k_r.EF.Schedule.datasource" />
+    <None Include="Properties\DataSources\k_r.EF.sysdiagrams.datasource" />
+    <None Include="Properties\DataSources\k_r.EF.Users.datasource" />
     <None Include="Properties\DataSources\k_r.Properties.Resources.datasource" />
     <None Include="Properties\DataSources\k_r.Properties.Settings.datasource" />
-    <None Include="Properties\DataSources\Listener.datasource" />
-    <None Include="Properties\DataSources\Model1.datasource" />
+    <None Include="Properties\DataSources\k_r.view.addCoursForm.datasource" />
+    <None Include="Properties\DataSources\k_r.view.addGroupForm.datasource" />
+    <None Include="Properties\DataSources\k_r.view.AdminUC1.datasource" />
+    <None Include="Properties\DataSources\k_r.view.AuForm.datasource" />
+    <None Include="Properties\DataSources\k_r.view.CoursesForm.datasource" />
+    <None Include="Properties\DataSources\k_r.view.CoursesUCcs.datasource" />
+    <None Include="Properties\DataSources\k_r.view.CoursForm.datasource" />
+    <None Include="Properties\DataSources\k_r.view.EddDelF.datasource" />
+    <None Include="Properties\DataSources\k_r.view.MyCoursForm.datasource" />
+    <None Include="Properties\DataSources\k_r.view.RasUC.datasource" />
+    <None Include="Properties\DataSources\k_r.view.UserForm.datasource" />
+    <None Include="Properties\DataSources\k_r.view.UserUC.datasource" />
+    <None Include="Properties\DataSources\ManagerForm.datasource" />
+    <None Include="Properties\DataSources\MedForms.datasource" />
     <None Include="Properties\DataSources\Program.datasource" />
-    <None Include="Properties\DataSources\Role.datasource" />
-    <None Include="Properties\DataSources\Schedule.datasource" />
-    <None Include="Properties\DataSources\sysdiagram.datasource" />
-    <None Include="Properties\DataSources\User.datasource" />
+    <None Include="Properties\DataSources\RaspisForms.datasource" />
+    <None Include="Properties\DataSources\SlushForms.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -215,6 +309,8 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Resources\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

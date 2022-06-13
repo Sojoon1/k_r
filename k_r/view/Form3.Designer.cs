@@ -39,9 +39,9 @@ namespace k_r
             // button3
             // 
             this.button3.BackColor = System.Drawing.Color.SkyBlue;
-            this.button3.Location = new System.Drawing.Point(190, 324);
+            this.button3.Location = new System.Drawing.Point(119, 321);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(185, 68);
+            this.button3.Size = new System.Drawing.Size(305, 68);
             this.button3.TabIndex = 7;
             this.button3.Text = "Выйти";
             this.button3.UseVisualStyleBackColor = false;
@@ -50,12 +50,13 @@ namespace k_r
             // button2
             // 
             this.button2.BackColor = System.Drawing.Color.SkyBlue;
-            this.button2.Location = new System.Drawing.Point(190, 222);
+            this.button2.Location = new System.Drawing.Point(119, 219);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(185, 68);
+            this.button2.Size = new System.Drawing.Size(305, 68);
             this.button2.TabIndex = 6;
             this.button2.Text = "Выбрать курс";
             this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // label1
             // 
@@ -70,12 +71,13 @@ namespace k_r
             // button1
             // 
             this.button1.BackColor = System.Drawing.Color.SkyBlue;
-            this.button1.Location = new System.Drawing.Point(190, 127);
+            this.button1.Location = new System.Drawing.Point(119, 124);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(185, 68);
+            this.button1.Size = new System.Drawing.Size(305, 68);
             this.button1.TabIndex = 4;
             this.button1.Text = "Мои курсы";
             this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // SlushForms
             // 
@@ -89,6 +91,7 @@ namespace k_r
             this.Controls.Add(this.button1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "SlushForms";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Форма слушателя";
             this.Load += new System.EventHandler(this.Form3_Load);
             this.ResumeLayout(false);

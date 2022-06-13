@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using k_r;
+using k_r.EF;
 
 namespace k_r
 {
@@ -18,15 +19,13 @@ namespace k_r
             InitializeComponent();
         }
 
-        public void GenerateDataToGroupUC1Card(Group group)
+        public void GenerateDataToGroupUC1Card(Groups group)
         {
-            label1.Text = group.ID.ToString();
-            label2.Text = group.НазваниеГруппы;
-            label3.Text = group.КоличествоСлушателей;
-            label4.Text = group.Преподаватель;
-            label5.Text = group.ID_Курса.ToString();
-            label6.Text = group.Кабинет.ToString();
-            label7.Text = group.ID_Расписания.ToString();
+            label1.Text = group.ID_Группы.ToString();
+            label2.Text = group.Название;
+            label3.Text = group.КолисествоСлушателей.ToString();
+            
+         
         }
 
         

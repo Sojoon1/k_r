@@ -31,6 +31,7 @@ namespace k_r
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ManagerForm));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label2 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.button4 = new System.Windows.Forms.Button();
@@ -39,8 +40,6 @@ namespace k_r
             this.button3 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
-            this.button7 = new System.Windows.Forms.Button();
-            this.label2 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -58,6 +57,15 @@ namespace k_r
             this.panel1.Size = new System.Drawing.Size(806, 122);
             this.panel1.TabIndex = 0;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(383, 79);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(157, 23);
+            this.label2.TabIndex = 3;
+            this.label2.Text = "Главное меню";
             // 
             // pictureBox1
             // 
@@ -88,6 +96,7 @@ namespace k_r
             this.button4.TabIndex = 20;
             this.button4.Text = "Выйти";
             this.button4.UseVisualStyleBackColor = false;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // butListener_Click
             // 
@@ -144,26 +153,6 @@ namespace k_r
             this.button6.UseVisualStyleBackColor = false;
             this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
-            // button7
-            // 
-            this.button7.BackColor = System.Drawing.Color.SkyBlue;
-            this.button7.Location = new System.Drawing.Point(477, 351);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(243, 60);
-            this.button7.TabIndex = 26;
-            this.button7.Text = "Данные для авторизации";
-            this.button7.UseVisualStyleBackColor = false;
-            this.button7.Click += new System.EventHandler(this.button7_Click);
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(383, 79);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(157, 23);
-            this.label2.TabIndex = 3;
-            this.label2.Text = "Главное меню";
-            // 
             // ManagerForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 23F);
@@ -171,7 +160,6 @@ namespace k_r
             this.BackColor = System.Drawing.Color.PapayaWhip;
             this.ClientSize = new System.Drawing.Size(806, 546);
             this.Controls.Add(this.button4);
-            this.Controls.Add(this.button7);
             this.Controls.Add(this.button6);
             this.Controls.Add(this.button5);
             this.Controls.Add(this.button3);
@@ -182,6 +170,7 @@ namespace k_r
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "ManagerForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Форма мененджера";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
@@ -201,7 +190,6 @@ namespace k_r
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.Button button7;
         private System.Windows.Forms.Label label2;
     }
 }

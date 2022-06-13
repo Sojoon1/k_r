@@ -1,4 +1,5 @@
-﻿using System;
+﻿using k_r.EF;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,7 +13,7 @@ namespace k_r
 {
     public partial class AutotizationsForms : Form
     {
-        public static Autotization UFN { get; set; }
+        Users USER = new Users();
         public static AutotizationsForms ATH { get; set; }
 
         Model1 db = new Model1();
@@ -48,24 +49,24 @@ namespace k_r
                 MessageBox.Show("Введите логин и пароль!");
                 return;
             }
-            Autotization UsersFind = db.Autotizations.Find(textBoxLogin.Text);
+            Users UsersFind = db.Users.Find(textBoxLogin.Text);
             if ((UsersFind != null) && (UsersFind.Пароль == textBoxPassword.Text))
             {
-                UFN = UsersFind;
+                USER = UsersFind;
                 ATH = this;
-                if (UFN.User.ID_Роль == 1)
+                if (USER.ID_Role == 1)
                 {
                     SlushForms f3 = new SlushForms();
                     f3.Show();
                     this.Hide();
                 }
-                else if (UFN.User.ID_Роль == 2)
+                else if (USER.ID_Role == 2)
                 {
                     ManagerForm managerForm = new ManagerForm();
                     managerForm.Show();
                     this.Hide();
                 }
-                else if (UFN.User.ID_Роль == 3)
+                else if (USER.ID_Role == 3)
                 {
                     adminForms adm = new adminForms();
                     adm.Show();

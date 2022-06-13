@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using k_r.view;
+using k_r.EF;
 
 namespace k_r.view
 {
@@ -22,10 +23,13 @@ namespace k_r.view
         {
 
             label1.Text = lst.ID.ToString();
-            label2.Text = lst.ФИО;
-            label3.Text = lst.Курс.ToString();
-            label4.Text = lst.ID_Группа.ToString();
-            label5.Text = lst.ID_Роль.ToString();
+            label2.Text = lst.Фамилия;
+            label3.Text = lst.Имя;
+            label4.Text = lst.Отчество;
+            label5.Text = lst.ДатаРождения;
+            label6.Text = lst.Телефон;
+            label7.Text = lst.Почта;
+           
 
         }
         public void AdminUC1_Load(object sender, EventArgs e)

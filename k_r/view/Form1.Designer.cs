@@ -55,7 +55,7 @@ namespace k_r
             // 
             this.exitBox.BackColor = System.Drawing.Color.SkyBlue;
             this.exitBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.exitBox.Location = new System.Drawing.Point(442, 298);
+            this.exitBox.Location = new System.Drawing.Point(442, 312);
             this.exitBox.Name = "exitBox";
             this.exitBox.Size = new System.Drawing.Size(130, 38);
             this.exitBox.TabIndex = 13;
@@ -138,7 +138,8 @@ namespace k_r
             this.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "AutotizationsForms";
-            this.Text = "Форма авторизации";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Информационная система \"Курсы повышения квалификации\"";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxGlaz)).EndInit();
             this.ResumeLayout(false);

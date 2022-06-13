@@ -8,13 +8,15 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using k_r;
+using k_r.EF;
+using k_r.view;
 
 namespace k_r
 {
     public partial class GroupForm : Form
     {
         Model1 db = new Model1();
-        public List<Group> group = new List<Group>(DatabaseContext.db.Groups);
+        public List<Groups> group = new List<Groups>(DatabaseContext.db.Groups);
         public static List<UserControl> selUC = new List<UserControl>();
         public GroupForm()
         {
@@ -22,7 +24,7 @@ namespace k_r
             GenerateGroupUC1CardList(group);
         }
 
-        private void GenerateGroupUC1CardList(List<Group> group)
+        private void GenerateGroupUC1CardList(List<Groups> group)
         {
             foreach (var a in group)
             {
@@ -54,6 +56,12 @@ namespace k_r
             ManagerForm manager = new ManagerForm();
            manager.Show();
             this.Hide();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            addGroupForm addGroup = new addGroupForm();
+            addGroup.ShowDialog();
         }
     }
 }

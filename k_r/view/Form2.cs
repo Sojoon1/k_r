@@ -8,13 +8,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using k_r.EF;
 
 namespace k_r
 {
     public partial class MedForms : Form
     {
         Model1 db = new Model1();
-        public List<Listener> lst = new List<Listener>(DatabaseContext.db.Listeners);
+        Listener lst2 = new Listener();
+        public List<Listener> lst = new List<Listener>(DatabaseContext.db.Listener);
         public static List<UserControl> selUC = new List<UserControl>();
         public MedForms()
         {
@@ -30,7 +32,7 @@ namespace k_r
                 card.GenerateDataToAdminUC1Card(a);
                 flowLayoutPanel1.Controls.Add(card);
 
-                card.Click += new System.EventHandler(this.Card_Click);
+                
                 card.DoubleClick += new System.EventHandler(this.Card_DoubleClick);
             }
         }
@@ -41,7 +43,9 @@ namespace k_r
         }
         private void Card_DoubleClick(object sender, EventArgs e)
         {
-
+            EddDelF eddDel = new EddDelF();
+            eddDel.Show();
+            this.Hide();
         }
         private void button6_Click(object sender, EventArgs e)
         {
@@ -53,7 +57,7 @@ namespace k_r
 
         private void Form2_Load(object sender, EventArgs e)
         {
-            listenerBindingSource.DataSource = db.Listeners.ToList();
+            listenerBindingSource.DataSource = db.Listener.ToList();
             
         }
 
@@ -67,20 +71,16 @@ namespace k_r
 
         private void button1_Click(object sender, EventArgs e)
         {
-            AddForm add = new AddForm();
-            add.db = db;
-            DialogResult dr = add.ShowDialog();
-            if (dr == DialogResult.OK)
-            {
-                listenerBindingSource.DataSource = db.Listeners.ToList();
-            }
+            AddForm  addfrm =new AddForm();
+            addfrm.Show();
+            this.Close();
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            AddForm f5 = new AddForm();
-            f5.Show();
+            //this.Hide();
+            //AddForm add = new AddForm();
+            //add.ShowDialog();
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -91,7 +91,7 @@ namespace k_r
                 "Удаление данных", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (dr == DialogResult.Yes)
             {
-                db.Listeners.Remove(lich);
+                db.Listener.Remove(lich);
                 try
                 {
                     db.SaveChanges();
@@ -100,7 +100,7 @@ namespace k_r
                 {
                     MessageBox.Show(ex.Message);
                 }
-                listenerBindingSource.DataSource = db.Listeners.ToList();
+                listenerBindingSource.DataSource = db.Listener.ToList();
             }
         }
 

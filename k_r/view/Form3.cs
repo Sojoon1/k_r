@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using k_r.EF;
+using k_r.view;
 
 namespace k_r
 {
@@ -28,6 +30,20 @@ namespace k_r
             AutotizationsForms f1 = new AutotizationsForms();
 
             f1.Show();
+            this.Hide();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            MyCoursForm f1 = new MyCoursForm();
+            f1.Show();
+            this.Hide();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            CoursForm cou = new CoursForm();
+            cou.Show();
             this.Hide();
         }
     }

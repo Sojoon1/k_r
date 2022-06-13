@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using k_r.EF;
 
 namespace k_r
 {
@@ -20,19 +21,32 @@ namespace k_r
 
         private void Form4_Load(object sender, EventArgs e)
         {
-            scheduleBindingSource.DataSource = db.Schedules.ToList();
+            scheduleBindingSource.DataSource = db.Schedule.ToList();
             groupBindingSource.DataSource = db.Groups.ToList();
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
             this.Close();
-            MedForms f2 = new MedForms();
-            f2.Show();
+            ManagerForm manager = new ManagerForm();
+            manager.Show();
             this.Hide();
         }
 
         private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button4_Click_1(object sender, EventArgs e)
+        {
+            this.Close();
+            ManagerForm manager = new ManagerForm();
+            manager.Show();
+            this.Hide();
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
         {
 
         }

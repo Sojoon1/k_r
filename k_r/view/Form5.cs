@@ -7,15 +7,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using k_r.view;
+using k_r;
+using k_r.EF;
 
 namespace k_r
 {
     public partial class AddForm : Form
     {
         Model1 db = new Model1();
-        Listener listener = new Listener();
-        
+        Listener listener = new Listener();        
 
         public AddForm()
         {
@@ -24,49 +24,50 @@ namespace k_r
 
         private void AddForm_Load(object sender, EventArgs e)
         {
-            //listenerBindingSource.DataSource = DatabaseContext.db.Listeners.ToList();
-            //foreach (Tovar a in SkladFrm.selectedUC)
-            //{
-            //    listener = DatabaseContext.db.Listeners.First(x => x.Title == a.TitleLbl.Text);
-            //    skladBindingSource.DataSource = sklad;
-            //    pictureBox1.ImageLocation = .Photo;
-            //}
+
+            
         }
         private void button1_Click(object sender, EventArgs e)
         {
-            DatabaseContext.db.Listeners.Add(listener);
+            
+            //listener.ID_Группа= iD_ГруппаComboBox.SelectedIndex+1;
+            //listener.ID_Роль=iD_РольComboBox.SelectedIndex+1;
+            
+            //listener.ДатаРождения = датаРожденияDateTimePicker.Text;
+            //listener.Курс = курсComboBox.Text;
+            //listener.Почта = почтаTextBox.Text;
+            //listener.Телефон = телефонTextBox.Text;
+            //listener.ФИО = фИОTextBox.Text;
+
+            DatabaseContext.db.Listener.Add(listener);
+
             try
             {
                 DatabaseContext.db.SaveChanges();
                 MessageBox.Show("Информация сохранена");
             }
-            catch (Exception ex)
+            catch (System.Data.Entity.Validation.DbEntityValidationException ex)
             {
-                MessageBox.Show(ex.Message.ToString());
+               foreach(System.Data.Entity.Validation.DbEntityValidationResult validationError in ex.EntityValidationErrors)
+                    
+                {
+                    MessageBox.Show("Object: " + validationError.Entry.Entity.ToString());
+                    MessageBox.Show(" ");
+                    foreach (System.Data.Entity.Validation.DbValidationError err in validationError.ValidationErrors)
+                    {
+                        MessageBox.Show(err.ErrorMessage + " ");
+                    }
+                }
+                //MessageBox.Show(ex.Message.ToString());
             }
             this.Close();
-            //if (textBox1.Text == "" || textBox2.Text == "" || textBox3.Text == "" || textBox4.Text == "" || textBox5.Text == "") 
-            //{
-            //    MessageBox.Show("Не все поля заполнены!");
-            //    return;
-            //}
-            //Listener lich = new Listener();
-            //lich.ID = Convert.ToInt32(textBox1.Text);
-            //lich.ФИО = textBox2.Text;
-            //lich.Курс = Convert.ToInt32(textBox3.Text);
-            //lich.ID_Группа = Convert.ToInt32(textBox4.Text);
-            //lich.ID_Роль = Convert.ToInt32(textBox5.Text);
-
-
-            //db.Listeners.Add(lich);
-            //db.SaveChanges();
-            //DialogResult = DialogResult.OK;
+           
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            DialogResult = DialogResult.Cancel;
-            this.Hide();
+            this.Close();
+            
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -82,9 +83,14 @@ namespace k_r
             //    string file = openFileDialog.FileName;
             //    int num = file.IndexOf("pic");
             //    file = file.Substring(num);
-            //    pictureBox1.Image = Image.FromFile(file);
-            //    sklad.Photo = file;
+            //    photoPictureBox.Image = Image.FromFile(file);
+                
             //}
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

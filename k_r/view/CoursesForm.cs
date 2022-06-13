@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using k_r.EF;
 
 
 namespace k_r.view
@@ -17,7 +18,7 @@ namespace k_r.view
     {
 
         Model1 db = new Model1();
-        public List<Cours> cours = new List<Cours>(DatabaseContext.db.Courses);
+        public List<Сourses> cours = new List<Сourses>(DatabaseContext.db.Сourses);
 
         public static List<UserControl> coursUC = new List<UserControl>();
         public CoursesForm()
@@ -26,7 +27,7 @@ namespace k_r.view
             GenerateCoursesUCcsCardList(cours);
         }
 
-        private void GenerateCoursesUCcsCardList(List<Cours> cours)
+        private void GenerateCoursesUCcsCardList(List<Сourses> cours)
         {
             foreach (var a in cours)
             {
@@ -56,6 +57,14 @@ namespace k_r.view
         private void flowLayoutPanel1_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            ManagerForm manager = new ManagerForm();
+            manager.Show();
+            this.Hide();
         }
     }
 }
